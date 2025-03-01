@@ -1,0 +1,28 @@
+import tkinter as tk
+from tkinter import messagebox
+from random import randint
+
+# Creamos la ventana
+ventana = tk.Tk()
+ventana.title("Dado")
+ventana.geometry("200x200")
+ventana.resizable(0, 0)
+
+# Creamos el dado y frecuencia
+frecuencia = tk.IntVar()
+dado = [1, 2, 3, 4, 5, 6]
+
+def lanzar_dado():
+    return dado[randint(0, 5)]
+
+def lanzar_dado_gui():            
+    messagebox.showinfo("Dado", "El número es: " + str(lanzar_dado()), + " y se lanzó " + str(frecuencia) + " veces")
+
+pregunta = tk.Label(ventana, text="¿Cuantas veces quieres lanzar el dado?")
+pregunta = tk.Entry(ventana, textvariable=frecuencia).pack()
+
+
+boton = tk.Button(ventana, text="Lanzar dado", command=lanzar_dado_gui)
+boton.pack()
+
+ventana.mainloop()

@@ -7,9 +7,9 @@ def calcular_resistencia():
     v = random.randint(1, 220)
     i = random.randint(1, 10)
     r = v / i
-    mv = f"La corriente es {v} V\n"
+    mv = f"EL voltaje es {v} V\n"
     mi = f"La corriente es {i} A\n"
-    mr = f"La corriente es {r:.2f} Ohm\n"
+    mr = f"La resistencia es {r:.2f} Ohm\n\n"
     texto.insert(tk.END, mv)
     texto.insert(tk.END, mi)
     texto.insert(tk.END, mr)
